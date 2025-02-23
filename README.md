@@ -13,8 +13,10 @@ Configuration files for various applications I use
 ### Installation
 
 1. **Clone the repository:**
+
    ```sh
    git clone https://github.com/your-username/your-neovim-config.git ~/.config/nvim
    ```
-2. **Install plugins**
+3. **Install plugins**
+
    Simply launch neovim and run ```:PackerSync```
