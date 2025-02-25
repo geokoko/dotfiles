@@ -28,6 +28,16 @@ require("nvim-tree").setup({
   },
 })
 
+-- Make sure the tree remains open in the new tab with this autocommand
+vim.api.nvim_create_autocmd("TabEnter", {
+    callback = function()
+        local api = require("nvim-tree.api")
+        if not api.tree.is_visible() then
+            api.tree.open()
+        end
+    end,
+})
+
 -- Ensuring file explorer opens at startup
 vim.cmd([[ autocmd VimEnter * NvimTreeOpen ]])
 
@@ -35,5 +45,4 @@ local opts = { noremap = true, silent = true }
 
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', opts)  -- Toggle file tree
 vim.keymap.set('n', '<C-f>', ':NvimTreeFindFile<CR>', opts) -- Focus on the current file
-vim.keymap.set('n', '<C-t>', ':tabnew %<CR>', opts)        -- Open file in a new tab
 
