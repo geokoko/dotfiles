@@ -1,23 +1,36 @@
-local api = require("nvim-tree.api")
-
 require("nvim-tree").setup({
-  sort_by = "case_sensitive",
+  sync_root_with_cwd = true,  -- Keeps tree in sync with current working directory
+  respect_buf_cwd = true,     -- Automatically changes cwd when navigating files
   view = {
     width = 30,
+    side = "left",
+    preserve_window_proportions = true,  -- Prevents tree from resizing when switching tabs
+  },
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,  -- Auto-adjusts tree when opening a file
+  },
+  actions = {
+    open_file = {
+      quit_on_open = false,   -- Do NOT close tree when opening a file (VS Code behavior)
+      resize_window = true,   -- Resize tree properly
+    },
   },
   renderer = {
-    group_empty = true,
+    icons = {
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+      },
+    },
+    highlight_opened_files = "name",
   },
-  filters = {
-    dotfiles = true,
-  },
-
 })
 
--- Keybindings for NvimTree
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set('n', '<C-n>', ':NvimTreeFindFile<CR>', opts)  -- Find the current file in tree
-vim.keymap.set('n', '<C-f>', ':NvimTreeFocus<CR>', opts)     -- Focus on the tree
-vim.keymap.set('n', '<C-t>', ':NvimTreeToggle<CR>', opts)    -- Toggle the file tree
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', opts)  -- Toggle file tree
+vim.keymap.set('n', '<C-f>', ':NvimTreeFindFile<CR>', opts) -- Focus on the current file
+vim.keymap.set('n', '<C-t>', ':tabnew %<CR>', opts)        -- Open file in a new tab
 
