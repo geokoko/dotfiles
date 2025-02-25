@@ -36,6 +36,7 @@ require('packer').startup(function(use)
 	use 'Xuyuanp/nerdtree-git-plugin'               -- NERDTree Git integration
 	use 'nvim-lualine/lualine.nvim'					-- Status bar
 	use 'lewis6991/gitsigns.nvim'                   -- Git signs
+	use 'romgrk/barbar.nvim'						-- Tabline for neovim
 	use 'tiagovla/tokyodark.nvim'					-- Tokyodark neovim colorscheme
 	use 'github/copilot.vim'						-- Github Copilot
 	use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install' }	-- Markdown preview

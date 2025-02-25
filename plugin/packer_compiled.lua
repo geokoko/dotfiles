@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/geokoko/.local/share/nvim/site/pack/packer/start/awesome-vim-colorschemes",
     url = "https://github.com/rafi/awesome-vim-colorschemes"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/home/geokoko/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/home/geokoko/.local/share/nvim/site/pack/packer/start/copilot.vim",
