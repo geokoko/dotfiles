@@ -28,6 +28,9 @@ require("nvim-tree").setup({
   },
 })
 
+-- Ensuring file explorer opens at startup
+vim.cmd([[ autocmd VimEnter * NvimTreeOpen ]])
+
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', opts)  -- Toggle file tree
