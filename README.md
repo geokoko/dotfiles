@@ -15,7 +15,7 @@ Configuration files for various applications I use
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/your-username/your-neovim-config.git ~/.config/nvim
+   git clone https://github.com/geokoko/dotfiles.git ~/.config/nvim
    ```
 3. **Install plugins**
 
