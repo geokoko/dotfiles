@@ -42,7 +42,10 @@ require('packer').startup(function(use)
 	use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install' }	-- Markdown preview
 	use 'nvim-telescope/telescope.nvim'				-- Telescope
 	use 'nvim-lua/plenary.nvim'						-- Plenary (dependency for telescope)
-	use 'javiorfo/nvim-soil'
+	use {
+		'javiorfo/nvim-soil',
+		ft = "plantuml",
+	}
 
 	-- for puml syntax highlighting:
 	use 'javiorfo/nvim-nyctophilia'
