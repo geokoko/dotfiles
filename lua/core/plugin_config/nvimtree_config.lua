@@ -1,19 +1,18 @@
 require("nvim-tree").setup({
-	sync_root_with_cwd = true,  -- Keeps tree in sync with current working directory
-	respect_buf_cwd = true,     -- Automatically changes cwd when navigating files
+	sync_root_with_cwd = true,  			-- Keeps tree in sync with current working directory
+	respect_buf_cwd = true,     			-- Automatically changes cwd when navigating files
 	view = {
 		width = 30,
 		side = "left",
-		preserve_window_proportions = true,  -- Prevents tree from resizing when switching tabs
+		preserve_window_proportions = true, -- Prevents tree from resizing when switching tabs
 	},
 	update_focused_file = {
 		enable = true,
-		update_cwd = true,  -- Auto-adjusts tree when opening a file
+		update_cwd = true,  				-- Auto-adjusts tree when opening a file
 	},
 	actions = {
-		open_file = {
-			quit_on_open = false,   -- Do NOT close tree when opening a file (VS Code behavior)
-			resize_window = true,   -- Resize tree properly
+		open_file = {						
+			resize_window = true,   		-- Resize tree properly
 		},
 	},
 	renderer = {
@@ -25,6 +24,13 @@ require("nvim-tree").setup({
 			},
 		},
 		highlight_opened_files = "name",
+	},
+	filters = {
+		dotfiles = false,					-- Show dotfiles
+	},
+	git = {
+		enable = true,						-- Enable git integration
+		ignore = false,						-- Show ignored files
 	},
 })
 
