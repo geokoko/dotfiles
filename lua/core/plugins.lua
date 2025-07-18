@@ -17,8 +17,8 @@ require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- LSP Management
-	use { "williamboman/mason.nvim" }         	-- Mason for managing LSPs
-	use { "williamboman/mason-lspconfig.nvim" } -- Bridge between Mason & LSP
+	use { "mason-org/mason.nvim" }         		-- Mason for managing LSPs
+	use { "mason-org/mason-lspconfig.nvim" } 	-- Bridge between Mason & LSP
 	use { "neovim/nvim-lspconfig" }           	-- LSP configuration
 
 	-- Plugins
@@ -42,14 +42,7 @@ require('packer').startup(function(use)
 	use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install' }	-- Markdown preview
 	use 'nvim-telescope/telescope.nvim'				-- Telescope
 	use 'nvim-lua/plenary.nvim'						-- Plenary (dependency for telescope)
-	use {
-		'javiorfo/nvim-soil',
-		ft = "plantuml",
-	}
 
-	-- for puml syntax highlighting:
-	use 'javiorfo/nvim-nyctophilia'
-	
 	if packer_bootstrap then
 		require('packer').sync()
 	end
