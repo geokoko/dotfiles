@@ -9,9 +9,16 @@ mason.setup()
 mason_lspconfig.setup({
   ensure_installed = {
     "lua_ls",
+	"clangd",
+	"pyright",
+	"html",
+	"cssls",
+	"rust_analyzer",
 	-- Lua server is recommended for easier setup of the configuration
+	-- The rest of the servers are just for popular programming languages (that I also use)
     -- Add the rest of your preferred servers here
   },
+  automatic_installation = true,
 })
 
 -- DEPRECATED AFTER MASON 2.0.0 release. See https://github.com/mason-org/mason-lspconfig.nvim/releases/tag/v2.0.0
