@@ -32,5 +32,11 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     end
   end,
 })
+-- Use classic vim colorscheme
+vim.cmd('colorscheme vim')
+-- Make identifiers white
+vim.api.nvim_set_hl(0, "Identifier", { fg = "#ffffff" })
 
-vim.cmd('colorscheme vim')					-- Use classic vim colorscheme
+-- make Normal text white too
+vim.api.nvim_set_hl(0, "Normal", { fg = "#ffffff" })
+
