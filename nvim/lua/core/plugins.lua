@@ -43,6 +43,20 @@ require('packer').startup(function(use)
 	use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install' }	-- Markdown preview
 	use 'nvim-telescope/telescope.nvim'				-- Telescope
 	use 'nvim-lua/plenary.nvim'						-- Plenary (dependency for telescope)
+	use { 'akinsho/toggleterm.nvim',
+		tag = '*',
+		config = function()
+			require("toggleterm").setup{
+				size = 15,
+				open_mapping = [[<C-`>]],
+				shade_terminals = true,
+				direction = 'float',
+				float_opts = {
+					border = 'curved',
+				},
+			}
+		end
+	}												-- Toggleable terminal
 
 	if packer_bootstrap then
 		require('packer').sync()
